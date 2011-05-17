@@ -11,6 +11,8 @@
 
 package Vistas;
 
+import Modelos.Trabajador;
+
 /**
  *
  * @author Shack
@@ -213,7 +215,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        trabajador=new Trabajador(txtCI.getText(),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
+        trabajador=new Trabajador(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**

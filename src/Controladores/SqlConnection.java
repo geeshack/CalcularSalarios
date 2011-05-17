@@ -1,40 +1,58 @@
 package Controladores;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import org.sqlite.JDBC;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author hectorg
- */
 public class SqlConnection {
 
-    Connection con;
+    private static Connection con = null;
 
-    public SqlConnection() {
+    public static ResultSet ejecutarResultado(String query) {
+        ResultSet rs = null;
+
+        try {
+            Statement stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+
+            return rs;
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+            return rs;
+        }
     }
 
-    public void conectar() throws InstantiationException, IllegalAccessException {
-        //String Url = "jdbc:mysql://localhost/bdtaller";
-        //String user="hector";
-        //String pass="ajjf1031";
-        String user = "root";
-        String pass = "";
+    public static void ejecutar(String query) {
         try {
-            /*Class.forName("com.mysql.jdbc.Driver").newInstance();
-            con = DriverManager.getConnection(Url,user,pass);*/
+            Statement stmt = con.createStatement();
+            stmt.executeQuery(query);
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
+        }
+    }
+
+    /*public String setSucursal(Sucursal sucursal) {
+    try {
+    String SQL = "insert into sucursal (nombre,direccion,encargado) values ('" + sucursal.getNombreSucursal() + "','" + sucursal.getDireccion() + "','" + sucursal.getEncargado() + "')";
+    conn.conectar();
+    con = conn.con;
+
+    Statement stmt = con.createStatement();
+    stmt.execute(SQL);
+    con.close();
+    return "todo blue";
+    } catch (Exception es) {
+    return es.toString();
+    }
+    }*/
+    
+    public static void conectar() throws InstantiationException, IllegalAccessException {
+        try {
             Class.forName("org.sqlite.JDBC");
             con = DriverManager.getConnection("jdbc:sqlite:salarios");
-
-            //con=DriverManager.getConnection("jdbc:sqlserver://192.168.0.106\\SQLEXPRESS:1433;databaseName=Veterinaria;Integrated Security=True");
 
         } catch (SQLException excepcionSql) { //excepcionSql = puede ponerle otro nombre
             JOptionPane.showMessageDialog(null, excepcionSql.getMessage(),
@@ -48,7 +66,7 @@ public class SqlConnection {
         }
     }
 
-    public void desconectar() throws SQLException {
+    public static void desconectar() throws SQLException {
         con.close();
     }
 }
