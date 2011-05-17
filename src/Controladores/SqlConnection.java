@@ -11,15 +11,7 @@ public class SqlConnection {
 
     private static Connection con = null;
 
-    public SqlConnection() {
-        try {
-            SqlConnection.conectar();
-        } catch (Exception e) {
-            System.out.print(e.getMessage());
-        }
-    }
-
-    public static ResultSet EjecutarSentencia(String query) {
+    public static ResultSet ejecutarResultado(String query) {
         ResultSet rs = null;
 
         try {
@@ -30,6 +22,15 @@ public class SqlConnection {
         } catch (Exception e) {
             System.out.print(e.getMessage());
             return rs;
+        }
+    }
+
+    public static void ejecutar(String query) {
+        try {
+            Statement stmt = con.createStatement();
+            stmt.executeQuery(query);
+        } catch (Exception e) {
+            System.out.print(e.getMessage());
         }
     }
 
@@ -47,6 +48,7 @@ public class SqlConnection {
     return es.toString();
     }
     }*/
+    
     public static void conectar() throws InstantiationException, IllegalAccessException {
         try {
             Class.forName("org.sqlite.JDBC");
