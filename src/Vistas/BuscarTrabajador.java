@@ -16,14 +16,15 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtCI = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tableResultados = new javax.swing.JTable();
         btnCancela = new javax.swing.JButton();
         btnRegistra = new javax.swing.JButton();
-        btnRegistra1 = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registrar Trabajador");
 
         jPanel1.setName("jPanel1"); // NOI18N
 
@@ -37,12 +38,12 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         jLabel2.setText("CI:");
         jLabel2.setName("jLabel2"); // NOI18N
 
-        jButton1.setText("jButton1");
-        jButton1.setName("jButton1"); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.setName("btnBuscar"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tableResultados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -53,8 +54,8 @@ public class BuscarTrabajador extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setName("jTable1"); // NOI18N
-        jScrollPane1.setViewportView(jTable1);
+        tableResultados.setName("tableResultados"); // NOI18N
+        jScrollPane1.setViewportView(tableResultados);
 
         btnCancela.setText("Cancelar");
         btnCancela.setName("btnCancela"); // NOI18N
@@ -67,8 +68,8 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         btnRegistra.setText("Modificar");
         btnRegistra.setName("btnRegistra"); // NOI18N
 
-        btnRegistra1.setText("Eliminar");
-        btnRegistra1.setName("btnRegistra1"); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setName("btnEliminar"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,7 +81,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnRegistra)
                         .addGap(26, 26, 26)
-                        .addComponent(btnRegistra1)
+                        .addComponent(btnEliminar)
                         .addGap(18, 18, 18)
                         .addComponent(btnCancela))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -94,7 +95,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
                                 .addComponent(txtCI)
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(32, 32, 32)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -110,14 +111,14 @@ public class BuscarTrabajador extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancela)
                     .addComponent(btnRegistra)
-                    .addComponent(btnRegistra1))
+                    .addComponent(btnEliminar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -157,15 +158,15 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancela;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegistra;
-    private javax.swing.JButton btnRegistra1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tableResultados;
     private javax.swing.JTextField txtCI;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
