@@ -4,9 +4,9 @@
  */
 
 /*
- * RegistroTarjetaDiaria.java
+ * ReciboVenta.java
  *
- * Created on May 18, 2011, 9:54:53 AM
+ * Created on May 19, 2011, 10:48:00 AM
  */
 
 package Vistas;
@@ -15,10 +15,10 @@ package Vistas;
  *
  * @author Shack
  */
-public class RegistroTarjetaDiaria extends javax.swing.JDialog {
+public class ReciboVenta extends javax.swing.JDialog {
 
-    /** Creates new form RegistroTarjetaDiaria */
-    public RegistroTarjetaDiaria(java.awt.Frame parent, boolean modal) {
+    /** Creates new form ReciboVenta */
+    public ReciboVenta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -32,6 +32,8 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBuscar1 = new javax.swing.JButton();
+        btnBuscar2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
@@ -40,11 +42,14 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
         txtFecha = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtHoras = new javax.swing.JTextField();
-        btnBuscar1 = new javax.swing.JButton();
-        btnBuscar2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Tarjeta Diaria");
+
+        btnBuscar1.setText("Aceptar");
+        btnBuscar1.setName("btnBuscar1"); // NOI18N
+
+        btnBuscar2.setText("Cancelar");
+        btnBuscar2.setName("btnBuscar2"); // NOI18N
 
         jPanel1.setName("jPanel1"); // NOI18N
 
@@ -62,7 +67,7 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
         txtFecha.setEditable(false);
         txtFecha.setName("txtFecha"); // NOI18N
 
-        jLabel3.setText("Horas:");
+        jLabel3.setText("Monto:");
         jLabel3.setName("jLabel3"); // NOI18N
 
         txtHoras.setName("txtHoras"); // NOI18N
@@ -79,7 +84,7 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -111,16 +116,11 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnBuscar1.setText("Aceptar");
-        btnBuscar1.setName("btnBuscar1"); // NOI18N
-
-        btnBuscar2.setText("Cancelar");
-        btnBuscar2.setName("btnBuscar2"); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -129,10 +129,11 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
                         .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 175, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,7 +141,7 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar2)
                     .addComponent(btnBuscar1))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,7 +153,7 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                RegistroTarjetaDiaria dialog = new RegistroTarjetaDiaria(new javax.swing.JFrame(), true);
+                ReciboVenta dialog = new ReciboVenta(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
