@@ -22,6 +22,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     /** Creates new form RegistrarTrabajador */
     public RegistrarTrabajador() {
         initComponents();
+        panelComision.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -47,6 +48,9 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         NoComision = new javax.swing.JRadioButton();
         Horas = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
+        panelComision = new javax.swing.JPanel();
+        labelComision = new javax.swing.JLabel();
+        txtComision = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
@@ -87,17 +91,60 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         buttonGroup1.add(Comision);
         Comision.setText("Trabajador con comisión");
         Comision.setName("Comision"); // NOI18N
+        Comision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ComisionMouseClicked(evt);
+            }
+        });
 
         buttonGroup1.add(NoComision);
         NoComision.setText("Trabajador sin comisión");
         NoComision.setName("NoComision"); // NOI18N
+        NoComision.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NoComisionMouseClicked(evt);
+            }
+        });
 
         buttonGroup1.add(Horas);
         Horas.setText("Trabajador por horas");
         Horas.setName("Horas"); // NOI18N
+        Horas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HorasMouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("Tipo:");
         jLabel4.setName("jLabel4"); // NOI18N
+
+        panelComision.setName("panelComision"); // NOI18N
+
+        labelComision.setText("Porcentaje de comisión:");
+        labelComision.setName("labelComision"); // NOI18N
+
+        txtComision.setName("txtComision"); // NOI18N
+
+        javax.swing.GroupLayout panelComisionLayout = new javax.swing.GroupLayout(panelComision);
+        panelComision.setLayout(panelComisionLayout);
+        panelComisionLayout.setHorizontalGroup(
+            panelComisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelComisionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelComisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtComision, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelComision, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        panelComisionLayout.setVerticalGroup(
+            panelComisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelComisionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelComision)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -118,11 +165,15 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(Comision)
-                    .addComponent(NoComision)
-                    .addComponent(Horas)
-                    .addComponent(jLabel4))
-                .addContainerGap(167, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Comision)
+                            .addComponent(NoComision)
+                            .addComponent(Horas))
+                        .addGap(18, 18, 18)
+                        .addComponent(panelComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,12 +192,15 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(Comision)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(NoComision)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Horas)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Comision)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(NoComision)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Horas))
+                    .addComponent(panelComision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         btnCancelar.setText("Cancelar");
@@ -171,25 +225,24 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(332, Short.MAX_VALUE)
-                .addComponent(btnRegistrar)
-                .addGap(18, 18, 18)
-                .addComponent(btnCancelar)
-                .addGap(32, 32, 32))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnRegistrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancelar))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnRegistrar))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -218,6 +271,27 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         trabajador=new Trabajador(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void ComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComisionMouseClicked
+        // TODO add your handling code here:
+        labelComision.setText("Porcentaje de comisión:");
+        txtComision.setText("");
+        panelComision.setVisible(true);
+    }//GEN-LAST:event_ComisionMouseClicked
+
+    private void NoComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoComisionMouseClicked
+        // TODO add your handling code here:
+        labelComision.setText("Sueldo fijo:");
+        txtComision.setText("");
+        panelComision.setVisible(true);
+    }//GEN-LAST:event_NoComisionMouseClicked
+
+    private void HorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorasMouseClicked
+        // TODO add your handling code here:
+        labelComision.setText("Sueldo por hora:");
+        txtComision.setText("");
+        panelComision.setVisible(true);
+    }//GEN-LAST:event_HorasMouseClicked
+
     /**
     * @param args the command line arguments
     */
@@ -243,7 +317,10 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelComision;
+    private javax.swing.JPanel panelComision;
     private javax.swing.JTextField txtCI;
+    private javax.swing.JTextField txtComision;
     private javax.swing.JTextField txtNacimiento;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
