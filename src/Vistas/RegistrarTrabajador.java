@@ -1,6 +1,6 @@
 package Vistas;
 
-import Modelos.Trabajador;
+import Controladores.ControladorTrabajador;
 
 public class RegistrarTrabajador extends javax.swing.JFrame {
 
@@ -244,7 +244,8 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        trabajador=new Trabajador(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
+        controladorTrabajador=new ControladorTrabajador();
+        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void ComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComisionMouseClicked
@@ -296,5 +297,5 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
-    private Trabajador trabajador;
+    private ControladorTrabajador controladorTrabajador;
 }
