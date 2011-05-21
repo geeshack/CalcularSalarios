@@ -12,6 +12,7 @@
 package Vistas;
 
 import Modelos.Trabajador;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -268,7 +269,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        trabajador=new Trabajador(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
+        trabajador=new Trabajador(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void ComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComisionMouseClicked
@@ -276,6 +277,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         labelComision.setText("Porcentaje de comisión:");
         txtComision.setText("");
         panelComision.setVisible(true);
+        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_ComisionMouseClicked
 
     private void NoComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoComisionMouseClicked
@@ -283,6 +285,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         labelComision.setText("Sueldo fijo:");
         txtComision.setText("");
         panelComision.setVisible(true);
+        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_NoComisionMouseClicked
 
     private void HorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorasMouseClicked
@@ -290,6 +293,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         labelComision.setText("Sueldo por hora:");
         txtComision.setText("");
         panelComision.setVisible(true);
+        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_HorasMouseClicked
 
     /**
@@ -326,4 +330,5 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private Trabajador trabajador;
+    private String radioSeleccionado;
 }
