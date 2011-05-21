@@ -2,6 +2,9 @@ package Modelos;
 
 import Controladores.SqlConnection;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
 public abstract class Trabajador {
 
     protected int ci;
@@ -34,6 +37,16 @@ public abstract class Trabajador {
     protected abstract void modificar();
 
     protected abstract boolean existe();
+
+    public static ArrayList<Trabajador> buscarTrabajadores(int CI, String nombre) {
+        //Mono para buscar trabajadores
+        return null;
+    }
+
+    public Object[] toObjectArray() {
+        Object[] data = {ci, nombreCompleto};
+        return data;
+    }
 
     protected void conexionEstatica(String query) {
         try {
