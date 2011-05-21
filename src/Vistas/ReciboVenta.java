@@ -11,16 +11,22 @@
 
 package Vistas;
 
+import Controladores.ControladorReciboVenta;
+import Controladores.ControladorTrabajador;
+
 /**
  *
  * @author Shack
  */
 public class ReciboVenta extends javax.swing.JDialog {
 
+    ControladorReciboVenta controlador=new ControladorReciboVenta();
+
     /** Creates new form ReciboVenta */
     public ReciboVenta(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        controlador.setVista(this);
     }
 
     /** This method is called from within the constructor to
@@ -58,6 +64,11 @@ public class ReciboVenta extends javax.swing.JDialog {
 
         btnBuscar.setText("Buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         txtCI.setName("txtCI"); // NOI18N
 
@@ -120,7 +131,6 @@ public class ReciboVenta extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -133,7 +143,6 @@ public class ReciboVenta extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 175, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,6 +155,11 @@ public class ReciboVenta extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        controlador.BuscarCliente();
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
     * @param args the command line arguments
@@ -177,4 +191,8 @@ public class ReciboVenta extends javax.swing.JDialog {
     private javax.swing.JTextField txtHoras;
     // End of variables declaration//GEN-END:variables
 
+
+    public void setTrabajadorCI(int ci){
+        txtCI.setText(ci+"");
+    }
 }

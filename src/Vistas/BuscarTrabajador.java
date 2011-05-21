@@ -1,10 +1,18 @@
 package Vistas;
 
+import Controladores.ControladorTrabajador;
+import Interfaces.IReceptorTrabajador;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 public class BuscarTrabajador extends javax.swing.JFrame {
+
+    ControladorTrabajador controlador=new ControladorTrabajador();
 
     //Constructor
     public BuscarTrabajador() {
         initComponents();
+        controlador.setVista(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -22,6 +30,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         btnCancela = new javax.swing.JButton();
         btnRegistra = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnSeleccionar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registrar Trabajador");
@@ -40,20 +49,33 @@ public class BuscarTrabajador extends javax.swing.JFrame {
 
         btnBuscar.setText("Buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         tableResultados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "CI", "Nombre", "Tipo"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tableResultados.setName("tableResultados"); // NOI18N
         jScrollPane1.setViewportView(tableResultados);
 
@@ -71,6 +93,14 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         btnEliminar.setText("Eliminar");
         btnEliminar.setName("btnEliminar"); // NOI18N
 
+        btnSeleccionar.setText("Seleccionar");
+        btnSeleccionar.setName("btnSeleccionar"); // NOI18N
+        btnSeleccionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeleccionarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -79,6 +109,8 @@ public class BuscarTrabajador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnSeleccionar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnRegistra)
                         .addGap(26, 26, 26)
                         .addComponent(btnEliminar)
@@ -118,7 +150,8 @@ public class BuscarTrabajador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancela)
                     .addComponent(btnRegistra)
-                    .addComponent(btnEliminar))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnSeleccionar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -148,6 +181,23 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCancelaActionPerformed
 
+    private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
+        // TODO add your handling code here:
+        int rowS = tableResultados.getSelectedRow();
+        if (rowS > -1) {
+            this.controlador.seleccionarTrabajador(rowS);
+            this.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "No hay trabajadores para seleccionar",
+                    "Error al Seleccionar", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSeleccionarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        controlador.buscarTrabajador(Integer.parseInt(txtCI.getText()), txtNombre.getText());
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
     //Inicio
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -162,6 +212,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     private javax.swing.JButton btnCancela;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegistra;
+    private javax.swing.JButton btnSeleccionar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -171,4 +222,20 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
+
+    public void setReceptor(IReceptorTrabajador receptor){
+        this.controlador.setReceptor(receptor);
+    }
+
+    public void agregarCliente(Object[] toObjectArray) {
+        DefaultTableModel modelo = (DefaultTableModel) tableResultados.getModel();
+        modelo.addRow(toObjectArray);
+    }
+
+    public void vaciarTabla() {
+        DefaultTableModel modelo = (DefaultTableModel) tableResultados.getModel();
+        while (modelo.getRowCount() > 0) {
+            modelo.removeRow(0);
+        }
+    }
 }

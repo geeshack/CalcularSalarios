@@ -2,6 +2,7 @@ package Modelos;
 
 import Controladores.SqlConnection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class Trabajador {
 
@@ -64,6 +65,16 @@ public class Trabajador {
             System.out.println(e.getMessage());
         }
         return false;
+    }
+
+    public static ArrayList<Trabajador> buscarTrabajadores(int CI, String nombre) {
+        //Mono para buscar trabajadores
+        return null;
+    }
+
+    public Object[] toObjectArray() {
+        Object[] data = {ci, nombreCompleto, tipo};
+        return data;
     }
 
     private void conexionEstatica(String query) {
