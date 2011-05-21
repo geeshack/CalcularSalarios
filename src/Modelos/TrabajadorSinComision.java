@@ -1,10 +1,13 @@
 package Modelos;
 
-public class TrabajadorSinComision extends Trabajador{
+import Controladores.SqlConnection;
+import java.sql.ResultSet;
+
+public class TrabajadorSinComision extends Trabajador {
 
     protected int sueldo;
 
-    public TrabajadorSinComision (int ci, String nombreCompleto, String fechaNacimiento, int sueldo) {
+    public TrabajadorSinComision(int ci, String nombreCompleto, String fechaNacimiento, int sueldo) {
         this.ci = ci;
         this.nombreCompleto = nombreCompleto;
         this.fechaNacimiento = fechaNacimiento;
@@ -13,17 +16,18 @@ public class TrabajadorSinComision extends Trabajador{
 
     @Override
     protected void registrar() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        String query = "Insert into TrabajadorSinComision (ci, nombreCompleto, fechaNacimiento, sueldo) "
+                + "Values (" + ci + ",'" + nombreCompleto + "','" + fechaNacimiento + "'," + sueldo + ")";
+
+        this.conexionEstatica(query);
     }
 
     @Override
     protected void modificar() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+        String query = "Update TrabajadorSinComision "
+                + "Set nombreCompleto = '" + nombreCompleto + "', fechaNacimiento = '" + fechaNacimiento + "', sueldo = " + sueldo
+                + "Where ci = " + ci;
 
-    @Override
-    protected boolean existe() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.conexionEstatica(query);
     }
-
 }

@@ -7,7 +7,7 @@ public class TrabajadorPorHoras extends Trabajador {
 
     protected int sueldo;
 
-    public TrabajadorPorHoras (int ci, String nombreCompleto, String fechaNacimiento, int sueldo) {
+    public TrabajadorPorHoras(int ci, String nombreCompleto, String fechaNacimiento, int sueldo) {
         this.ci = ci;
         this.nombreCompleto = nombreCompleto;
         this.fechaNacimiento = fechaNacimiento;
@@ -17,7 +17,7 @@ public class TrabajadorPorHoras extends Trabajador {
     @Override
     protected void registrar() {
         String query = "Insert into TrabajadorPorHoras (ci, nombreCompleto, fechaNacimiento, sueldo) "
-                + "Values (" + ci + ",'" + nombreCompleto + "','" + fechaNacimiento + "')";
+                + "Values (" + ci + ",'" + nombreCompleto + "','" + fechaNacimiento + "'," + sueldo + ")";
 
         this.conexionEstatica(query);
     }
@@ -25,26 +25,9 @@ public class TrabajadorPorHoras extends Trabajador {
     @Override
     protected void modificar() {
         String query = "Update TrabajadorPorHoras "
-                + "Set nombreCompleto = '" + nombreCompleto + "', fechaNacimiento = '" + fechaNacimiento + "'"
+                + "Set nombreCompleto = '" + nombreCompleto + "', fechaNacimiento = '" + fechaNacimiento + "', sueldo = " + sueldo
                 + "Where ci = " + ci;
 
         this.conexionEstatica(query);
-    }
-
-    @Override
-    protected boolean existe () {
-        String query = "Select * From TrabajadorPorHoras Where ci = " + ci;
-
-        try {
-            SqlConnection.conectar();
-            ResultSet rs = SqlConnection.ejecutarResultado(query);
-            SqlConnection.desconectar();
-
-            return rs.next();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return false;
     }
 }

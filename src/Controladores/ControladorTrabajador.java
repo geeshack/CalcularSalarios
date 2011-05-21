@@ -21,6 +21,7 @@ public class ControladorTrabajador {
         } else {
             trabajador = new TrabajadorSinComision(ci, nombreCompleto, fechaNacimiento, sueldo);
         }
+        trabajador.guardar();
     }
 
     public void setReceptor(IReceptorTrabajador receptor){
