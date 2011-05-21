@@ -2,6 +2,7 @@ package Vistas;
 
 public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
+    //Constructor
     public RegistroTarjetaDiaria(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
