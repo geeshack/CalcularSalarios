@@ -33,7 +33,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         panelComision = new javax.swing.JPanel();
         labelComision = new javax.swing.JLabel();
-        txtComision = new javax.swing.JTextField();
+        txtSueldo = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
@@ -106,7 +106,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         labelComision.setText("Porcentaje de comisión:");
         labelComision.setName("labelComision"); // NOI18N
 
-        txtComision.setName("txtComision"); // NOI18N
+        txtSueldo.setName("txtSueldo"); // NOI18N
 
         javax.swing.GroupLayout panelComisionLayout = new javax.swing.GroupLayout(panelComision);
         panelComision.setLayout(panelComisionLayout);
@@ -115,7 +115,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
             .addGroup(panelComisionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelComisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtComision, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSueldo, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelComision, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -125,7 +125,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(labelComision)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -248,27 +248,27 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         controladorTrabajador=new ControladorTrabajador();
-        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado);
+        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void ComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComisionMouseClicked
         labelComision.setText("Porcentaje de comisión:");
-        txtComision.setText("");
+        txtSueldo.setText("");
         panelComision.setVisible(true);
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_ComisionMouseClicked
 
     private void NoComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoComisionMouseClicked
         labelComision.setText("Sueldo fijo:");
-        txtComision.setText("");
+        txtSueldo.setText("");
         panelComision.setVisible(true);
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_NoComisionMouseClicked
 
     private void HorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorasMouseClicked
         labelComision.setText("Sueldo por hora:");
-        txtComision.setText("");
+        txtSueldo.setText("");
         panelComision.setVisible(true);
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_HorasMouseClicked
@@ -299,9 +299,9 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JLabel labelComision;
     private javax.swing.JPanel panelComision;
     private javax.swing.JTextField txtCI;
-    private javax.swing.JTextField txtComision;
     private javax.swing.JTextField txtNacimiento;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtSueldo;
     // End of variables declaration//GEN-END:variables
 
     private Trabajador trabajador;

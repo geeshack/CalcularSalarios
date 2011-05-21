@@ -234,7 +234,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="txtComision" alignment="0" max="32767" attributes="1"/>
+                          <Component id="txtSueldo" alignment="0" max="32767" attributes="1"/>
                           <Component id="labelComision" alignment="0" max="32767" attributes="1"/>
                       </Group>
                       <EmptySpace pref="20" max="32767" attributes="0"/>
@@ -247,7 +247,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="labelComision" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtComision" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtSueldo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="24" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -260,9 +260,9 @@
                 <Property name="name" type="java.lang.String" value="labelComision" noResource="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtComision">
+            <Component class="javax.swing.JTextField" name="txtSueldo">
               <Properties>
-                <Property name="name" type="java.lang.String" value="txtComision" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="txtSueldo" noResource="true"/>
               </Properties>
             </Component>
           </SubComponents>
