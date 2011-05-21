@@ -2,6 +2,7 @@ package Modelos;
 
 import Controladores.SqlConnection;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class Trabajador {
 
@@ -9,6 +10,9 @@ public class Trabajador {
     private String nombreCompleto;
     private String fechaNacimiento;
     private String tipo;
+
+    public Trabajador() {
+    }
 
     public Trabajador(int ci, String nombreCompleto, String fechaNacimiento, String tipo) {
         this.ci = ci;
