@@ -1,5 +1,8 @@
 package Vistas;
 
+import Modelos.Trabajador;
+import javax.swing.JRadioButton;
+
 import Controladores.ControladorTrabajador;
 
 public class RegistrarTrabajador extends javax.swing.JFrame {
@@ -244,26 +247,31 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
         controladorTrabajador=new ControladorTrabajador();
-        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),buttonGroup1.getSelection().toString());
+        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado);
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void ComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComisionMouseClicked
         labelComision.setText("Porcentaje de comisión:");
         txtComision.setText("");
         panelComision.setVisible(true);
+        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_ComisionMouseClicked
 
     private void NoComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoComisionMouseClicked
         labelComision.setText("Sueldo fijo:");
         txtComision.setText("");
         panelComision.setVisible(true);
+        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_NoComisionMouseClicked
 
     private void HorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorasMouseClicked
         labelComision.setText("Sueldo por hora:");
         txtComision.setText("");
         panelComision.setVisible(true);
+        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_HorasMouseClicked
 
     //Inicio
@@ -297,5 +305,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
+    private Trabajador trabajador;
+    private String radioSeleccionado;
     private ControladorTrabajador controladorTrabajador;
 }
