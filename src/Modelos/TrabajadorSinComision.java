@@ -1,8 +1,5 @@
 package Modelos;
 
-import Controladores.SqlConnection;
-import java.sql.ResultSet;
-
 public class TrabajadorSinComision extends Trabajador {
 
     protected int sueldo;
