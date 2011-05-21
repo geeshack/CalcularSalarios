@@ -1,6 +1,0 @@
-build/*
-dist/*
-nbproject/*
-build/built-jar.properties
-dist/CalcularSalarios.jar
-*~
