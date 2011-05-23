@@ -13,6 +13,18 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelComision.setVisible(false);
         panelSueldo.setVisible(false);
     }
+    public RegistrarTrabajador(Trabajador trabajador) {
+        initComponents();
+        panelComision.setVisible(false);
+        panelSueldo.setVisible(false);
+        txtCI.setText(trabajador.getCi()+"");
+        txtCI.setEditable(false);
+        txtNombre.setText(trabajador.getNombre());
+        String [] fecha=trabajador.getFecha().split("/");
+        txtAño.setText(fecha[0]);
+        txtMes.setText(fecha[1]);
+        txtDia.setText(fecha[2]);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

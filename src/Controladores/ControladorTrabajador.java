@@ -49,6 +49,10 @@ public class ControladorTrabajador {
         }
     }
 
+    public void modificarTrabajador(){
+        
+    }
+
     public void seleccionarTrabajador(int fila){
         trabajadorSeleccionado=listaTrabajadores.get(fila);
         receptor.RecibirTrabajador(trabajadorSeleccionado);

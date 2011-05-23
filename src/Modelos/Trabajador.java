@@ -25,6 +25,14 @@ public class Trabajador {
         return ci;
     }
 
+    public String getNombre(){
+        return nombreCompleto;
+    }
+
+    public String getFecha(){
+        return fechaNacimiento;
+    }
+
     @Override
     public String toString() {
         String datos = ci + " " + nombreCompleto + " " + fechaNacimiento;
