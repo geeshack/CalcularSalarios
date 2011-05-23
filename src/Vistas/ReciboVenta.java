@@ -8,7 +8,7 @@ public class ReciboVenta extends javax.swing.JDialog {
 
     /** Creates new form ReciboVenta */
     public ReciboVenta(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+        //super(parent, modal);
         initComponents();
         controlador.setVista(this);
     }
@@ -28,13 +28,19 @@ public class ReciboVenta extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         txtHoras = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("Recibos de Ventas");
 
         btnBuscar1.setText("Aceptar");
         btnBuscar1.setName("btnBuscar1"); // NOI18N
 
         btnBuscar2.setText("Cancelar");
         btnBuscar2.setName("btnBuscar2"); // NOI18N
+        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar2ActionPerformed(evt);
+            }
+        });
 
         jPanel1.setName("jPanel1"); // NOI18N
 
@@ -139,6 +145,11 @@ public class ReciboVenta extends javax.swing.JDialog {
         // TODO add your handling code here:
         controlador.BuscarCliente();
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
+        this.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBuscar2ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

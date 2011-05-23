@@ -1,11 +1,16 @@
 package Vistas;
 
+import Controladores.ControladorTarjetaDiaria;
+
 public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
+
+    ControladorTarjetaDiaria controlador=new ControladorTarjetaDiaria();
     //Constructor
     public RegistroTarjetaDiaria(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+        //super(parent, modal);
         initComponents();
+        controlador.setVista(this);
     }
 
     @SuppressWarnings("unchecked")
@@ -23,7 +28,7 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
         btnBuscar1 = new javax.swing.JButton();
         btnBuscar2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Tarjeta Diaria");
 
         jPanel1.setName("jPanel1"); // NOI18N
@@ -33,6 +38,11 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
         btnBuscar.setText("Buscar");
         btnBuscar.setName("btnBuscar"); // NOI18N
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         txtCI.setName("txtCI"); // NOI18N
 
@@ -96,6 +106,11 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
         btnBuscar2.setText("Cancelar");
         btnBuscar2.setName("btnBuscar2"); // NOI18N
+        btnBuscar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -126,6 +141,16 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        controlador.buscarCliente();
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed
+        this.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBuscar2ActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -152,5 +177,9 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
     private javax.swing.JTextField txtFecha;
     private javax.swing.JTextField txtHoras;
     // End of variables declaration//GEN-END:variables
+
+    public void setTrabajadorCI(int ci){
+        txtCI.setText(ci+"");
+    }
 
 }

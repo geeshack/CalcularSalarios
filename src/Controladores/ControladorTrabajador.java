@@ -32,8 +32,12 @@ public class ControladorTrabajador {
         this.vista=vista;
     }
 
-    public void buscarTrabajador(int ci, String nombre){
-        this.listaTrabajadores = Trabajador.buscarTrabajadores(ci, nombre);
+    public void buscarTrabajador(String ci, String nombre){
+        int id=0;
+        if(!ci.isEmpty())
+            id=Integer.parseInt(ci);
+
+        this.listaTrabajadores = Trabajador.buscarTrabajadores(id, nombre);
         int countRows = this.listaTrabajadores.size();
         //if (countRows == 1) {
         //    _cliente = (ClienteClass) _listaClientes.get(0);
@@ -43,6 +47,10 @@ public class ControladorTrabajador {
         for (int index = 0; index < countRows; index++) {
             this.vista.agregarTrabajador(this.listaTrabajadores.get(index).toObjectArray());
         }
+    }
+
+    public void modificarTrabajador(){
+        
     }
 
     public void seleccionarTrabajador(int fila){
