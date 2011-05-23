@@ -11,6 +11,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     public RegistrarTrabajador() {
         initComponents();
         panelComision.setVisible(false);
+        panelSueldo.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,7 +34,10 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         panelComision = new javax.swing.JPanel();
         labelComision = new javax.swing.JLabel();
-        txtComision = new javax.swing.JTextField();
+        txtSueldo = new javax.swing.JTextField();
+        panelSueldo = new javax.swing.JPanel();
+        labelComision1 = new javax.swing.JLabel();
+        txtSueldoComision = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
@@ -106,7 +110,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         labelComision.setText("Porcentaje de comisión:");
         labelComision.setName("labelComision"); // NOI18N
 
-        txtComision.setName("txtComision"); // NOI18N
+        txtSueldo.setName("txtSueldo"); // NOI18N
 
         javax.swing.GroupLayout panelComisionLayout = new javax.swing.GroupLayout(panelComision);
         panelComision.setLayout(panelComisionLayout);
@@ -115,7 +119,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
             .addGroup(panelComisionLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelComisionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtComision, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSueldo, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelComision, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
@@ -125,8 +129,37 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(labelComision)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(4, Short.MAX_VALUE))
+        );
+
+        panelSueldo.setName("panelSueldo"); // NOI18N
+
+        labelComision1.setText("Sueldo:");
+        labelComision1.setName("labelComision1"); // NOI18N
+
+        txtSueldoComision.setName("txtSueldoComision"); // NOI18N
+
+        javax.swing.GroupLayout panelSueldoLayout = new javax.swing.GroupLayout(panelSueldo);
+        panelSueldo.setLayout(panelSueldoLayout);
+        panelSueldoLayout.setHorizontalGroup(
+            panelSueldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 144, Short.MAX_VALUE)
+            .addGroup(panelSueldoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelSueldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSueldoComision, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelComision1))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        panelSueldoLayout.setVerticalGroup(
+            panelSueldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelSueldoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelComision1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtSueldoComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -148,42 +181,49 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
                             .addComponent(Comision)
                             .addComponent(NoComision)
                             .addComponent(Horas))
                         .addGap(18, 18, 18)
-                        .addComponent(panelComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(panelComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Comision)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(158, 158, 158)
                         .addComponent(NoComision)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Horas))
-                    .addComponent(panelComision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(Comision))
+                            .addComponent(panelComision, 0, 55, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(panelSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnCancelar.setText("Cancelar");
@@ -221,11 +261,11 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnRegistrar))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,30 +287,35 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
         controladorTrabajador=new ControladorTrabajador();
-        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado);
+        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void ComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComisionMouseClicked
         labelComision.setText("Porcentaje de comisión:");
-        txtComision.setText("");
+        txtSueldo.setText("");
         panelComision.setVisible(true);
+        panelSueldo.setVisible(true);
+        txtSueldoComision.setText("");
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_ComisionMouseClicked
 
     private void NoComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoComisionMouseClicked
         labelComision.setText("Sueldo fijo:");
-        txtComision.setText("");
+        txtSueldo.setText("");
         panelComision.setVisible(true);
+        panelSueldo.setVisible(false);
+        txtSueldoComision.setText("");
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_NoComisionMouseClicked
 
     private void HorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorasMouseClicked
         labelComision.setText("Sueldo por hora:");
-        txtComision.setText("");
+        txtSueldo.setText("");
         panelComision.setVisible(true);
+        panelSueldo.setVisible(false);
+        txtSueldoComision.setText("");
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_HorasMouseClicked
 
@@ -298,11 +343,14 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelComision;
+    private javax.swing.JLabel labelComision1;
     private javax.swing.JPanel panelComision;
+    private javax.swing.JPanel panelSueldo;
     private javax.swing.JTextField txtCI;
-    private javax.swing.JTextField txtComision;
     private javax.swing.JTextField txtNacimiento;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtSueldo;
+    private javax.swing.JTextField txtSueldoComision;
     // End of variables declaration//GEN-END:variables
 
     private Trabajador trabajador;

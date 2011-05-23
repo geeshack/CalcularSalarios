@@ -34,21 +34,6 @@ public class SqlConnection {
         }
     }
 
-    /*public String setSucursal(Sucursal sucursal) {
-    try {
-    String SQL = "insert into sucursal (nombre,direccion,encargado) values ('" + sucursal.getNombreSucursal() + "','" + sucursal.getDireccion() + "','" + sucursal.getEncargado() + "')";
-    conn.conectar();
-    con = conn.con;
-
-    Statement stmt = con.createStatement();
-    stmt.execute(SQL);
-    con.close();
-    return "todo blue";
-    } catch (Exception es) {
-    return es.toString();
-    }
-    }*/
-    
     public static void conectar() throws InstantiationException, IllegalAccessException {
         try {
             Class.forName("org.sqlite.JDBC");

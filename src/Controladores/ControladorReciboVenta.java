@@ -1,18 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Controladores;
 
 import Interfaces.*;
 import Modelos.Trabajador;
 import Vistas.*;
 
-/**
- *
- * @author Shack
- */
 public class ControladorReciboVenta implements IReceptorTrabajador {
 
     BuscarTrabajador buscarTrabajador;
