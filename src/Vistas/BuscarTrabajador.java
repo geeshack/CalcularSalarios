@@ -227,7 +227,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         this.controlador.setReceptor(receptor);
     }
 
-    public void agregarCliente(Object[] toObjectArray) {
+    public void agregarTrabajador(Object[] toObjectArray) {
         DefaultTableModel modelo = (DefaultTableModel) tableResultados.getModel();
         modelo.addRow(toObjectArray);
     }

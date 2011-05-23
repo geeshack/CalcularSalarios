@@ -41,7 +41,7 @@ public class ControladorTrabajador {
         //} else {
         this.vista.vaciarTabla();
         for (int index = 0; index < countRows; index++) {
-            this.vista.agregarCliente(this.listaTrabajadores.get(index).toObjectArray());
+            this.vista.agregarTrabajador(this.listaTrabajadores.get(index).toObjectArray());
         }
     }
 
