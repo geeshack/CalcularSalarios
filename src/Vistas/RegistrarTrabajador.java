@@ -27,7 +27,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtCI = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtNacimiento = new javax.swing.JTextField();
+        txtAño = new javax.swing.JTextField();
         Comision = new javax.swing.JRadioButton();
         NoComision = new javax.swing.JRadioButton();
         Horas = new javax.swing.JRadioButton();
@@ -38,10 +38,15 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelSueldo = new javax.swing.JPanel();
         labelComision1 = new javax.swing.JLabel();
         txtSueldoComision = new javax.swing.JTextField();
+        txtMes = new javax.swing.JTextField();
+        txtDia = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Registrar Trabajador");
 
         jPanel1.setName("jPanel1"); // NOI18N
 
@@ -68,10 +73,10 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         jLabel3.setText("Fecha nacimiento:");
         jLabel3.setName("jLabel3"); // NOI18N
 
-        txtNacimiento.setName("txtNacimiento"); // NOI18N
-        txtNacimiento.addActionListener(new java.awt.event.ActionListener() {
+        txtAño.setName("txtAño"); // NOI18N
+        txtAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNacimientoActionPerformed(evt);
+                txtAñoActionPerformed(evt);
             }
         });
 
@@ -162,6 +167,26 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        txtMes.setName("txtMes"); // NOI18N
+        txtMes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMesActionPerformed(evt);
+            }
+        });
+
+        txtDia.setName("txtDia"); // NOI18N
+        txtDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDiaActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("/");
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        jLabel6.setText("/");
+        jLabel6.setName("jLabel6"); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -179,8 +204,17 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                                 .addComponent(jLabel3))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtCI, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -213,7 +247,11 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(txtNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -278,8 +316,8 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private void txtCIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCIActionPerformed
     }//GEN-LAST:event_txtCIActionPerformed
 
-    private void txtNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNacimientoActionPerformed
-    }//GEN-LAST:event_txtNacimientoActionPerformed
+    private void txtAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAñoActionPerformed
+    }//GEN-LAST:event_txtAñoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
@@ -288,7 +326,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         controladorTrabajador=new ControladorTrabajador();
-        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtNacimiento.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
+        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -319,6 +357,14 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         radioSeleccionado=((JRadioButton)evt.getSource()).getName();
     }//GEN-LAST:event_HorasMouseClicked
 
+    private void txtMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMesActionPerformed
+
+    private void txtDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDiaActionPerformed
+
     //Inicio
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -341,13 +387,17 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelComision;
     private javax.swing.JLabel labelComision1;
     private javax.swing.JPanel panelComision;
     private javax.swing.JPanel panelSueldo;
+    private javax.swing.JTextField txtAño;
     private javax.swing.JTextField txtCI;
-    private javax.swing.JTextField txtNacimiento;
+    private javax.swing.JTextField txtDia;
+    private javax.swing.JTextField txtMes;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtSueldo;
     private javax.swing.JTextField txtSueldoComision;

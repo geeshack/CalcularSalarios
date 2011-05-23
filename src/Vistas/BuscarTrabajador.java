@@ -33,7 +33,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         btnSeleccionar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Registrar Trabajador");
+        setTitle("Buscar Trabajador");
 
         jPanel1.setName("jPanel1"); // NOI18N
 
@@ -195,7 +195,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        controlador.buscarTrabajador(Integer.parseInt(txtCI.getText()), txtNombre.getText());
+        controlador.buscarTrabajador(txtCI.getText(), txtNombre.getText());
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     //Inicio
@@ -227,7 +227,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         this.controlador.setReceptor(receptor);
     }
 
-    public void agregarCliente(Object[] toObjectArray) {
+    public void agregarTrabajador(Object[] toObjectArray) {
         DefaultTableModel modelo = (DefaultTableModel) tableResultados.getModel();
         modelo.addRow(toObjectArray);
     }
