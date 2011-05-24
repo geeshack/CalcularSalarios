@@ -13,20 +13,24 @@ import Vistas.*;
  *
  * @author Shack
  */
-public class ControladorTarjetaDiaria implements IReceptorTrabajador{
+public class ControladorSindicato implements IReceptorTrabajador  {
 
     BuscarTrabajador buscarTrabajador;
-    RegistroTarjetaDiaria vista;
+    RegistroSindicato vista;
 
-    public void setVista(RegistroTarjetaDiaria vista){
-        this.vista=vista;
-        this.vista.setFecha(Fecha.getFechaActual());
+    public void setVista(RegistroSindicato vista) {
+        this.vista = vista;
     }
 
-    public void buscarCliente() {
+    public void BuscarTrabajador(){
         buscarTrabajador=new BuscarTrabajador();
         buscarTrabajador.setReceptor(this);
         buscarTrabajador.setVisible(true);
+    }
+
+    public void Guardar(int ci, int aporte){
+        AporteSindicato aporteSindicato=new AporteSindicato(ci, aporte);
+        aporteSindicato.registrarAporte();
     }
 
     public void RecibirTrabajador(Trabajador trabajador) {

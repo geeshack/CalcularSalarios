@@ -63,7 +63,7 @@ public class Trabajador {
     protected void registrar() {
     }
 
-    protected void modificar() {
+    public void modificar() {
     }
 
     protected boolean existe() {

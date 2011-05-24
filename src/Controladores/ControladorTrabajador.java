@@ -20,8 +20,9 @@ public class ControladorTrabajador {
     }
 
 
-    public void modificar(){
-        
+    public void modificar(int ci, String nombreCompleto, String fechaNacimiento, String tipo, int sueldo, int comision){
+        Trabajador trabajador = Trabajador.getTrabajador(ci, nombreCompleto, fechaNacimiento, tipo, sueldo, comision);
+        trabajador.modificar();
     }
 
     public void setReceptor(IReceptorTrabajador receptor){

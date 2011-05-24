@@ -20,7 +20,7 @@ public class TrabajadorPorHoras extends Trabajador {
     }
 
     @Override
-    protected void modificar() {
+    public void modificar() {
         String query = "Update TrabajadorPorHoras "
                 + "Set nombreCompleto = '" + nombreCompleto + "', fechaNacimiento = '" + fechaNacimiento + "', sueldo = " + sueldo
                 + "Where ci = " + ci;

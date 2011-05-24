@@ -1,19 +1,22 @@
 package Controladores;
 
 import Interfaces.*;
+import Modelos.Fecha;
+import Modelos.ReciboVenta;
 import Modelos.Trabajador;
 import Vistas.*;
 
 public class ControladorReciboVenta implements IReceptorTrabajador {
 
     BuscarTrabajador buscarTrabajador;
-    ReciboVenta vista;
+    ReciboVentaVista vista;
 
     public ControladorReciboVenta() {
     }
 
-    public void setVista(ReciboVenta vista) {
+    public void setVista(ReciboVentaVista vista) {
         this.vista = vista;
+        this.vista.setFecha(Fecha.getFechaActual());
     }
 
     public void BuscarTrabajador(){
@@ -24,5 +27,10 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
 
     public void RecibirTrabajador(Trabajador trabajador) {
         vista.setTrabajadorCI(trabajador.getCi());
+    }
+
+    public void guardar(int ci, String fecha, int monto) {
+        ReciboVenta recibo=new ReciboVenta(ci,fecha,monto);
+        recibo.guardar();
     }
 }

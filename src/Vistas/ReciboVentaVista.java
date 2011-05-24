@@ -2,12 +2,18 @@ package Vistas;
 
 import Controladores.ControladorReciboVenta;
 
-public class ReciboVenta extends javax.swing.JDialog {
+public class ReciboVentaVista extends javax.swing.JDialog {
 
     ControladorReciboVenta controlador=new ControladorReciboVenta();
 
     /** Creates new form ReciboVenta */
-    public ReciboVenta(java.awt.Frame parent, boolean modal) {
+    public ReciboVentaVista(java.awt.Frame parent, boolean modal) {
+        //super(parent, modal);
+        initComponents();
+        controlador.setVista(this);
+    }
+
+    public ReciboVentaVista() {
         //super(parent, modal);
         initComponents();
         controlador.setVista(this);
@@ -17,7 +23,7 @@ public class ReciboVenta extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnBuscar1 = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         btnBuscar2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -26,13 +32,18 @@ public class ReciboVenta extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         txtFecha = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtHoras = new javax.swing.JTextField();
+        txtMonto = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Recibos de Ventas");
 
-        btnBuscar1.setText("Aceptar");
-        btnBuscar1.setName("btnBuscar1"); // NOI18N
+        btnGuardar.setText("Guardar");
+        btnGuardar.setName("btnGuardar"); // NOI18N
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnBuscar2.setText("Cancelar");
         btnBuscar2.setName("btnBuscar2"); // NOI18N
@@ -66,7 +77,7 @@ public class ReciboVenta extends javax.swing.JDialog {
         jLabel3.setText("Monto:");
         jLabel3.setName("jLabel3"); // NOI18N
 
-        txtHoras.setName("txtHoras"); // NOI18N
+        txtMonto.setName("txtMonto"); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -88,7 +99,7 @@ public class ReciboVenta extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtHoras)
+                                .addComponent(txtMonto)
                                 .addGap(1, 1, 1))
                             .addComponent(txtFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
@@ -108,7 +119,7 @@ public class ReciboVenta extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(txtHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -121,8 +132,8 @@ public class ReciboVenta extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
                         .addComponent(btnBuscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -134,7 +145,7 @@ public class ReciboVenta extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar2)
-                    .addComponent(btnBuscar1))
+                    .addComponent(btnGuardar))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -151,10 +162,15 @@ public class ReciboVenta extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_btnBuscar2ActionPerformed
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        controlador.guardar(Integer.parseInt(txtCI.getText()),txtFecha.getText(),Integer.parseInt(txtMonto.getText()));
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ReciboVenta dialog = new ReciboVenta(new javax.swing.JFrame(), true);
+                ReciboVentaVista dialog = new ReciboVentaVista(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
@@ -167,19 +183,23 @@ public class ReciboVenta extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscar2;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCI;
     private javax.swing.JTextField txtFecha;
-    private javax.swing.JTextField txtHoras;
+    private javax.swing.JTextField txtMonto;
     // End of variables declaration//GEN-END:variables
 
 
     public void setTrabajadorCI(int ci){
         txtCI.setText(ci+"");
+    }
+
+    public void setFecha(String fecha){
+        txtFecha.setText(fecha);
     }
 }

@@ -22,7 +22,7 @@ public class TrabajadorConComision extends Trabajador {
     }
 
     @Override
-    protected void modificar() {
+    public void modificar() {
         String query = "Update TrabajadorConComision "
                 + "Set nombreCompleto = '" + nombreCompleto + "', fechaNacimiento = '" + fechaNacimiento + "', sueldo = " + sueldo + ", comision = " + comision
                 + "Where ci = " + ci;

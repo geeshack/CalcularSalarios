@@ -13,6 +13,12 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
         controlador.setVista(this);
     }
 
+    public RegistroTarjetaDiaria() {
+        //super(parent, modal);
+        initComponents();
+        controlador.setVista(this);
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -180,6 +186,9 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
     public void setTrabajadorCI(int ci){
         txtCI.setText(ci+"");
+    }
+    public void setFecha(String fecha){
+        txtFecha.setText(fecha);
     }
 
 }

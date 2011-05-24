@@ -162,7 +162,6 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelSueldo.setLayout(panelSueldoLayout);
         panelSueldoLayout.setHorizontalGroup(
             panelSueldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 144, Short.MAX_VALUE)
             .addGroup(panelSueldoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelSueldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +172,6 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelSueldoLayout.setVerticalGroup(
             panelSueldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSueldoLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(labelComision1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSueldoComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -234,16 +232,16 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                             .addComponent(Comision)
                             .addComponent(NoComision)
                             .addComponent(Horas))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(panelComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(panelSueldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addComponent(NoComision)
@@ -272,9 +270,9 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(Comision))
                             .addComponent(panelComision, 0, 55, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(panelSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         btnCancelar.setText("Cancelar");
@@ -305,14 +303,14 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnCancelar))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar)
                     .addComponent(btnRegistrar))
@@ -340,9 +338,9 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         controladorTrabajador=new ControladorTrabajador();
         if(btnRegistrar.getText().equals("Registrar"))
-            controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
+            controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), Integer.parseInt(txtSueldoComision.getText()));
         else
-            controladorTrabajador.modificar();
+            controladorTrabajador.modificar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), Integer.parseInt(txtSueldoComision.getText()));
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
