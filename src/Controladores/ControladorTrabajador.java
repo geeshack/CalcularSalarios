@@ -19,18 +19,17 @@ public class ControladorTrabajador {
         trabajador.guardar();
     }
 
-
-    public void modificar(int ci, String nombreCompleto, String fechaNacimiento, String tipo, int sueldo, int comision){
+    public void modificar(int ci, String nombreCompleto, String fechaNacimiento, String tipo, int sueldo, int comision) {
         Trabajador trabajador = Trabajador.getTrabajador(ci, nombreCompleto, fechaNacimiento, tipo, sueldo, comision);
         trabajador.modificar();
     }
 
-    public void setReceptor(IReceptorTrabajador receptor){
-        this.receptor=receptor;
+    public void setReceptor(IReceptorTrabajador receptor) {
+        this.receptor = receptor;
     }
 
-    public void setVista(BuscarTrabajador vista){
-        this.vistaBuscar=vista;
+    public void setVista(BuscarTrabajador vista) {
+        this.vistaBuscar = vista;
     }
 
     public void buscarTrabajador(String ci, String nombre) {
@@ -46,10 +45,9 @@ public class ControladorTrabajador {
         }
     }
 
-
-    public void modificarTrabajador(int fila){
-        trabajadorSeleccionado=listaTrabajadores.get(fila);
-        vistaRegistro=new RegistrarTrabajador(trabajadorSeleccionado);
+    public void modificarTrabajador(int fila) {
+        trabajadorSeleccionado = listaTrabajadores.get(fila);
+        vistaRegistro = new RegistrarTrabajador(trabajadorSeleccionado);
         vistaRegistro.setVisible(true);
     }
 

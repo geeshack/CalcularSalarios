@@ -177,7 +177,6 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelaActionPerformed
 
     private void btnSeleccionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeleccionarActionPerformed
-        // TODO add your handling code here:
         int rowS = tableResultados.getSelectedRow();
         if (rowS > -1) {
             this.controlador.seleccionarTrabajador(rowS);
@@ -189,12 +188,10 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSeleccionarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
         controlador.buscarTrabajador(txtCI.getText(), txtNombre.getText());
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here
         int rowS = tableResultados.getSelectedRow();
         if (rowS > -1) {
             controlador.modificarTrabajador(rowS);
@@ -202,7 +199,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No hay trabajadores para seleccionar",
                     "Error al Seleccionar", JOptionPane.ERROR_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_btnModificarActionPerformed
 
     //Inicio

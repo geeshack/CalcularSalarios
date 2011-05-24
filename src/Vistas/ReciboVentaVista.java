@@ -4,17 +4,15 @@ import Controladores.ControladorReciboVenta;
 
 public class ReciboVentaVista extends javax.swing.JDialog {
 
-    ControladorReciboVenta controlador=new ControladorReciboVenta();
+    ControladorReciboVenta controlador = new ControladorReciboVenta();
 
-    /** Creates new form ReciboVenta */
+    //Constructor
     public ReciboVentaVista(java.awt.Frame parent, boolean modal) {
-        //super(parent, modal);
         initComponents();
         controlador.setVista(this);
     }
 
     public ReciboVentaVista() {
-        //super(parent, modal);
         initComponents();
         controlador.setVista(this);
     }
@@ -152,8 +150,8 @@ public class ReciboVentaVista extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Operaciones
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
         controlador.BuscarTrabajador();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -163,15 +161,16 @@ public class ReciboVentaVista extends javax.swing.JDialog {
     }//GEN-LAST:event_btnBuscar2ActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        // TODO add your handling code here:
-        controlador.guardar(Integer.parseInt(txtCI.getText()),txtFecha.getText(),Integer.parseInt(txtMonto.getText()));
+        controlador.guardar(Integer.parseInt(txtCI.getText()), txtFecha.getText(), Integer.parseInt(txtMonto.getText()));
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 ReciboVentaVista dialog = new ReciboVentaVista(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
@@ -180,7 +179,6 @@ public class ReciboVentaVista extends javax.swing.JDialog {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar2;
@@ -194,12 +192,11 @@ public class ReciboVentaVista extends javax.swing.JDialog {
     private javax.swing.JTextField txtMonto;
     // End of variables declaration//GEN-END:variables
 
-
-    public void setTrabajadorCI(int ci){
-        txtCI.setText(ci+"");
+    public void setTrabajadorCI(int ci) {
+        txtCI.setText(ci + "");
     }
 
-    public void setFecha(String fecha){
+    public void setFecha(String fecha) {
         txtFecha.setText(fecha);
     }
 }

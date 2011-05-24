@@ -4,9 +4,9 @@ import Controladores.ControladorTarjetaDiaria;
 
 public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
-
-    ControladorTarjetaDiaria controlador=new ControladorTarjetaDiaria();
+    ControladorTarjetaDiaria controlador = new ControladorTarjetaDiaria();
     //Constructor
+
     public RegistroTarjetaDiaria(java.awt.Frame parent, boolean modal) {
         //super(parent, modal);
         initComponents();
@@ -147,8 +147,8 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Operaciones
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
         controlador.buscarCliente();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -159,9 +159,11 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 RegistroTarjetaDiaria dialog = new RegistroTarjetaDiaria(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }
@@ -170,7 +172,6 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnBuscar1;
@@ -184,11 +185,11 @@ public class RegistroTarjetaDiaria extends javax.swing.JDialog {
     private javax.swing.JTextField txtHoras;
     // End of variables declaration//GEN-END:variables
 
-    public void setTrabajadorCI(int ci){
-        txtCI.setText(ci+"");
-    }
-    public void setFecha(String fecha){
-        txtFecha.setText(fecha);
+    public void setTrabajadorCI(int ci) {
+        txtCI.setText(ci + "");
     }
 
+    public void setFecha(String fecha) {
+        txtFecha.setText(fecha);
+    }
 }

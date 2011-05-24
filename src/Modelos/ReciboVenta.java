@@ -1,16 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Modelos;
 
 import Controladores.*;
 
-/**
- *
- * @author Shack
- */
 public class ReciboVenta {
 
     int ci;
@@ -23,15 +14,14 @@ public class ReciboVenta {
         this.monto = monto;
     }
 
-    public void guardar(){
-        String query="INSERT INTO Sindicato (ci,fecha,mono) VALUES ("+ci+","+monto+","+fecha+")";
-        try{
+    public void guardar() {
+        String query = "INSERT INTO Sindicato (ci,fecha,mono) VALUES (" + ci + "," + monto + "," + fecha + ")";
+        try {
             SqlConnection.conectar();
             SqlConnection.ejecutar(query);
             SqlConnection.desconectar();
+        } catch (Exception e) {
         }
-        catch(Exception e){}
 
     }
-
 }
