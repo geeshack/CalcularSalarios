@@ -10,7 +10,7 @@ public class Trabajador {
     protected int ci;
     protected String nombreCompleto;
     protected String fechaNacimiento;
-    private String tipo;
+    protected String tipo;
 
     public Trabajador() {
     }
@@ -30,6 +30,19 @@ public class Trabajador {
             trabajador = new TrabajadorConComision(ci, nombreCompleto, fechaNacimiento, sueldo, comision);
         } else {
             trabajador = new TrabajadorSinComision(ci, nombreCompleto, fechaNacimiento, sueldo);
+        }
+        return trabajador;
+    }
+
+    public static Trabajador getTrabajador(int ci) {
+        String tipo=obtenerTipo(ci);
+        Trabajador trabajador;
+        if (tipo.equals("Horas")) {
+            trabajador = new TrabajadorPorHoras(ci, tipo);
+        } else if (tipo.equals("Comision")) {
+            trabajador = new TrabajadorConComision(ci, tipo);
+        } else {
+            trabajador = new TrabajadorSinComision(ci, tipo);
         }
         return trabajador;
     }
@@ -64,6 +77,30 @@ public class Trabajador {
     }
 
     public void modificar() {
+    }
+
+    public int calcularPago(){
+        return 0;
+    }
+
+    private static String obtenerTipo(int ci){
+        String resultado="";
+        String query = "SELECT ci,'Comision' as tipo FROM TrabajadorConComision WHERE ci="+ci
+        +" UNION select ci,'Horas' as tipo from TrabajadorPorHoras WHERE ci="+ci
+        +" UNION select ci,'NoComision' as tipo from TrabajadorSinComision WHERE ci="+ci;
+
+        try {
+            SqlConnection.conectar();
+
+            ResultSet rs = SqlConnection.ejecutarResultado(query);
+            if(rs.next()) {
+                resultado=rs.getNString("tipo");
+            }
+            SqlConnection.desconectar();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return resultado;
     }
 
     protected boolean existe() {

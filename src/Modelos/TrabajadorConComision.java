@@ -13,6 +13,13 @@ public class TrabajadorConComision extends Trabajador {
         this.comision = comision;
     }
 
+    public TrabajadorConComision(int ci, String tipo) {
+        this.ci=ci;
+        this.tipo=tipo;
+    }
+
+
+
     @Override
     protected void registrar() {
         String query = "Insert into TrabajadorConComision (ci, nombreCompleto, fechaNacimiento, sueldo, comision) "
@@ -28,5 +35,10 @@ public class TrabajadorConComision extends Trabajador {
                 + "Where ci = " + ci;
 
         this.conexionEstatica(query);
+    }
+
+    @Override
+    public int calcularPago(){
+        return 0;
     }
 }

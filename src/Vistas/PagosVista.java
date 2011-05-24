@@ -165,6 +165,7 @@ public class PagosVista extends javax.swing.JDialog {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
+        controlador.calcularPago(Integer.parseInt(txtCI.getText()));
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetalleActionPerformed
@@ -208,4 +209,7 @@ public class PagosVista extends javax.swing.JDialog {
         txtCI.setText(ci+"");
     }
 
+    public void setLabelPago(int pago){
+        labelPago.setText(pago+"");
+    }
 }

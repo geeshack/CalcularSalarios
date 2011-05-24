@@ -11,6 +11,13 @@ public class TrabajadorPorHoras extends Trabajador {
         this.sueldo = sueldo;
     }
 
+    public TrabajadorPorHoras(int ci, String tipo) {
+        this.ci=ci;
+        this.tipo=tipo;
+    }
+
+
+
     @Override
     protected void registrar() {
         String query = "Insert into TrabajadorPorHoras (ci, nombreCompleto, fechaNacimiento, sueldo) "
@@ -26,5 +33,10 @@ public class TrabajadorPorHoras extends Trabajador {
                 + "Where ci = " + ci;
 
         this.conexionEstatica(query);
+    }
+
+    @Override
+    public int calcularPago(){
+        return 0;
     }
 }

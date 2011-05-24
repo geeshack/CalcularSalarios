@@ -22,4 +22,9 @@ public class ControladorPagos implements IReceptorTrabajador {
     public void RecibirTrabajador(Trabajador trabajador) {
         vista.setTrabajadorCI(trabajador.getCi());
     }
+
+    public void calcularPago(int ci){
+        Trabajador trabajador=Trabajador.getTrabajador(ci);
+        vista.setLabelPago(trabajador.calcularPago());
+    }
 }
