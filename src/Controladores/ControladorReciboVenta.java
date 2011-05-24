@@ -16,7 +16,7 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
         this.vista=vista;
     }
 
-    public void BuscarCliente(){
+    public void BuscarTrabajador(){
         buscarTrabajador=new BuscarTrabajador();
         buscarTrabajador.setReceptor(this);
         buscarTrabajador.setVisible(true);

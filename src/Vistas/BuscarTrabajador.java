@@ -197,12 +197,12 @@ public class BuscarTrabajador extends javax.swing.JFrame {
         // TODO add your handling code here
         int rowS = tableResultados.getSelectedRow();
         if (rowS > -1) {
-            this.controlador.seleccionarTrabajador(rowS);
+            controlador.modificarTrabajador(rowS);
         } else {
             JOptionPane.showMessageDialog(null, "No hay trabajadores para seleccionar",
                     "Error al Seleccionar", JOptionPane.ERROR_MESSAGE);
         }
-        controlador.modificarTrabajador();
+        
     }//GEN-LAST:event_btnModificarActionPerformed
 
     //Inicio

@@ -15,10 +15,11 @@ public class Trabajador {
     public Trabajador() {
     }
 
-    public Trabajador(int ci, String nombreCompleto, String tipo) {
+    public Trabajador(int ci, String nombreCompleto, String tipo,String fechaNacimiento) {
         this.ci = ci;
         this.nombreCompleto = nombreCompleto;
         this.tipo = tipo;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public int getCi() {
@@ -84,15 +85,15 @@ public class Trabajador {
 
         //if(nombre.isEmpty())
         
-        String query = "SELECT ci,nombreCompleto,'Comision' as tipo FROM TrabajadorConComision WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'"
-        +" UNION select ci,nombreCompleto,'Horas' as tipo from TrabajadorPorHoras WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'"
-        +" UNION select ci,nombreCompleto,'NoComision' as tipo from TrabajadorSinComision WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'";
+        String query = "SELECT ci,nombreCompleto,'Comision' as tipo,fechaNacimiento FROM TrabajadorConComision WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'"
+        +" UNION select ci,nombreCompleto,'Horas' as tipo,fechaNacimiento from TrabajadorPorHoras WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'"
+        +" UNION select ci,nombreCompleto,'NoComision' as tipo,fechaNacimiento from TrabajadorSinComision WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'";
         try {
             SqlConnection.conectar();
 
             ResultSet rs = SqlConnection.ejecutarResultado(query);
             while (rs.next()) {
-                t = new Trabajador(rs.getInt("ci"), rs.getString("nombreCompleto"), rs.getString("tipo"));
+                t = new Trabajador(rs.getInt("ci"), rs.getString("nombreCompleto"), rs.getString("tipo"),rs.getString("fechaNacimiento"));
                 listaTrabajadores.add(t);
             }
             SqlConnection.desconectar();

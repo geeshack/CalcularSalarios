@@ -143,7 +143,7 @@ public class ReciboVenta extends javax.swing.JDialog {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        controlador.BuscarCliente();
+        controlador.BuscarTrabajador();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar2ActionPerformed

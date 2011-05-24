@@ -24,6 +24,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         txtAño.setText(fecha[0]);
         txtMes.setText(fecha[1]);
         txtDia.setText(fecha[2]);
+        btnRegistrar.setText("Modificar");
     }
 
     @SuppressWarnings("unchecked")
@@ -338,7 +339,10 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         controladorTrabajador=new ControladorTrabajador();
-        controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
+        if(btnRegistrar.getText().equals("Registrar"))
+            controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), 0);
+        else
+            controladorTrabajador.modificar();
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
