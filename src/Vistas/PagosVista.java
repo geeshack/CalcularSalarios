@@ -143,6 +143,7 @@ public class PagosVista extends javax.swing.JDialog {
 }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        controlador.calcularPago(Integer.parseInt(txtCI.getText()));
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetalleActionPerformed
@@ -181,5 +182,9 @@ public class PagosVista extends javax.swing.JDialog {
 
     public void setTrabajadorCI(int ci) {
         txtCI.setText(ci + "");
+    }
+
+    public void setLabelPago(int pago) {
+        labelPago.setText(pago + "");
     }
 }
