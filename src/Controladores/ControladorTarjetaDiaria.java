@@ -33,4 +33,9 @@ public class ControladorTarjetaDiaria implements IReceptorTrabajador{
         vista.setTrabajadorCI(trabajador.getCi());
     }
 
+    public void guardar(int ci, String fecha, int horas) {
+        TarjetaDiaria tarjeta=new TarjetaDiaria(ci, fecha, horas);
+        tarjeta.registrarTarjeta();
+    }
+
 }
