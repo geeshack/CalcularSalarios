@@ -12,8 +12,8 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
     public ControladorReciboVenta() {
     }
 
-    public void setVista(ReciboVenta vista){
-        this.vista=vista;
+    public void setVista(ReciboVenta vista) {
+        this.vista = vista;
     }
 
     public void BuscarTrabajador(){
@@ -25,5 +25,4 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
     public void RecibirTrabajador(Trabajador trabajador) {
         vista.setTrabajadorCI(trabajador.getCi());
     }
-
 }

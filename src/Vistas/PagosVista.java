@@ -4,7 +4,7 @@
  */
 
 /*
- * Pagos.java
+ * PagosVista.java
  *
  * Created on May 23, 2011, 12:24:46 PM
  */
@@ -17,12 +17,12 @@ import Controladores.ControladorPagos;
  *
  * @author Shack
  */
-public class Pagos extends javax.swing.JDialog {
+public class PagosVista extends javax.swing.JDialog {
 
     ControladorPagos controlador=new ControladorPagos();
 
-    /** Creates new form Pagos */
-    public Pagos(java.awt.Frame parent, boolean modal) {
+    /** Creates new form PagosVista */
+    public PagosVista(java.awt.Frame parent, boolean modal) {
         //super(parent, modal);
         initComponents();
         controlador.setVista(this);
@@ -182,7 +182,7 @@ public class Pagos extends javax.swing.JDialog {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Pagos dialog = new Pagos(new javax.swing.JFrame(), true);
+                PagosVista dialog = new PagosVista(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
