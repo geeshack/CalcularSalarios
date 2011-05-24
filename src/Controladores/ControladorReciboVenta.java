@@ -12,12 +12,12 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
     public ControladorReciboVenta() {
     }
 
-    public void setVista(ReciboVenta vista){
-        this.vista=vista;
+    public void setVista(ReciboVenta vista) {
+        this.vista = vista;
     }
 
-    public void BuscarCliente(){
-        buscarTrabajador=new BuscarTrabajador();
+    public void BuscarCliente() {
+        buscarTrabajador = new BuscarTrabajador();
         buscarTrabajador.setReceptor(this);
         buscarTrabajador.setVisible(true);
     }
@@ -25,5 +25,4 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
     public void RecibirTrabajador(Trabajador trabajador) {
         vista.setTrabajadorCI(trabajador.getCi());
     }
-
 }

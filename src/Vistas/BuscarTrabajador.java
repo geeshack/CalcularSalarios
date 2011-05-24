@@ -7,7 +7,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class BuscarTrabajador extends javax.swing.JFrame {
 
-    ControladorTrabajador controlador=new ControladorTrabajador();
+    ControladorTrabajador controlador = new ControladorTrabajador();
 
     //Constructor
     public BuscarTrabajador() {
@@ -208,12 +208,12 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     //Inicio
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new BuscarTrabajador().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCancela;
@@ -228,8 +228,7 @@ public class BuscarTrabajador extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 
-
-    public void setReceptor(IReceptorTrabajador receptor){
+    public void setReceptor(IReceptorTrabajador receptor) {
         this.controlador.setReceptor(receptor);
     }
 
