@@ -19,8 +19,8 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
         this.vista.setFecha(Fecha.getFechaActual());
     }
 
-    public void BuscarTrabajador(){
-        buscarTrabajador=new BuscarTrabajador();
+    public void BuscarTrabajador() {
+        buscarTrabajador = new BuscarTrabajador();
         buscarTrabajador.setReceptor(this);
         buscarTrabajador.setVisible(true);
     }
@@ -30,7 +30,7 @@ public class ControladorReciboVenta implements IReceptorTrabajador {
     }
 
     public void guardar(int ci, String fecha, int monto) {
-        ReciboVenta recibo=new ReciboVenta(ci,fecha,monto);
+        ReciboVenta recibo = new ReciboVenta(ci, fecha, monto);
         recibo.guardar();
     }
 }

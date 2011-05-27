@@ -120,7 +120,7 @@ public class Principal extends javax.swing.JFrame {
 
     //Llamada al form de registrar trabajador
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        RegistrarTrabajador registro=new RegistrarTrabajador();
+        RegistrarTrabajador registro = new RegistrarTrabajador();
         registro.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
@@ -132,36 +132,33 @@ public class Principal extends javax.swing.JFrame {
 
     //Llamada al form de buscar trabajador
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        BuscarTrabajador registro=new BuscarTrabajador();
+        BuscarTrabajador registro = new BuscarTrabajador();
         registro.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-        RegistroTarjetaDiaria tarjeta=new RegistroTarjetaDiaria();
+        RegistroTarjetaDiaria tarjeta = new RegistroTarjetaDiaria();
         tarjeta.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-        ReciboVentaVista recibo=new ReciboVentaVista();
+        ReciboVentaVista recibo = new ReciboVentaVista();
         recibo.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-        RegistroSindicato sindicato=new RegistroSindicato();
+        RegistroSindicato sindicato = new RegistroSindicato();
         sindicato.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new Principal().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -174,5 +171,4 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
-
 }

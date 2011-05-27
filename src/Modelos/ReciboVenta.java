@@ -1,16 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Modelos;
 
 import Controladores.*;
 import java.sql.ResultSet;
 
-/**
- *
- * @author Shack
- */
 public class ReciboVenta {
 
     int ci;
@@ -24,7 +17,9 @@ public class ReciboVenta {
     }
 
     public void guardar() {
+
         String query = "INSERT INTO ReciboVenta (ci,monto,fecha) VALUES (" + ci + "," + monto + ",'" + fecha + "')";
+
         try {
             SqlConnection.conectar();
             SqlConnection.ejecutar(query);
@@ -33,6 +28,7 @@ public class ReciboVenta {
         }
 
     }
+
 
     public static int getRecibos(int ci) {
         String query = "SELECT sum(monto) as total FROM ReciboVenta WHERE ci=" + ci;

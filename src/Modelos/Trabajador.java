@@ -15,7 +15,7 @@ public class Trabajador {
     public Trabajador() {
     }
 
-    public Trabajador(int ci, String nombreCompleto, String tipo,String fechaNacimiento) {
+    public Trabajador(int ci, String nombreCompleto, String tipo, String fechaNacimiento) {
         this.ci = ci;
         this.nombreCompleto = nombreCompleto;
         this.tipo = tipo;
@@ -133,17 +133,17 @@ public class Trabajador {
     public static ArrayList<Trabajador> buscarTrabajadores(int ci, String nombre) {
         ArrayList<Trabajador> listaTrabajadores = new ArrayList<Trabajador>();
         Trabajador t;
-        
-        String query = "SELECT ci,nombreCompleto,'Comision' as tipo,fechaNacimiento FROM TrabajadorConComision WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'"
-        +" UNION select ci,nombreCompleto,'Horas' as tipo,fechaNacimiento from TrabajadorPorHoras WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'"
-        +" UNION select ci,nombreCompleto,'NoComision' as tipo,fechaNacimiento from TrabajadorSinComision WHERE ci="+ci+" OR nombreCompleto LIKE '%"+nombre+"%'";
+
+        String query = "SELECT ci,nombreCompleto,'Comision' as tipo,fechaNacimiento FROM TrabajadorConComision WHERE ci=" + ci + " OR nombreCompleto LIKE '%" + nombre + "%'"
+                + " UNION select ci,nombreCompleto,'Horas' as tipo,fechaNacimiento from TrabajadorPorHoras WHERE ci=" + ci + " OR nombreCompleto LIKE '%" + nombre + "%'"
+                + " UNION select ci,nombreCompleto,'NoComision' as tipo,fechaNacimiento from TrabajadorSinComision WHERE ci=" + ci + " OR nombreCompleto LIKE '%" + nombre + "%'";
 
         try {
             SqlConnection.conectar();
 
             ResultSet rs = SqlConnection.ejecutarResultado(query);
             while (rs.next()) {
-                t = new Trabajador(rs.getInt("ci"), rs.getString("nombreCompleto"), rs.getString("tipo"),rs.getString("fechaNacimiento"));
+                t = new Trabajador(rs.getInt("ci"), rs.getString("nombreCompleto"), rs.getString("tipo"), rs.getString("fechaNacimiento"));
                 listaTrabajadores.add(t);
             }
             SqlConnection.desconectar();

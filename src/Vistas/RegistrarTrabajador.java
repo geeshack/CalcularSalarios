@@ -13,14 +13,15 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelComision.setVisible(false);
         panelSueldo.setVisible(false);
     }
+
     public RegistrarTrabajador(Trabajador trabajador) {
         initComponents();
         panelComision.setVisible(false);
         panelSueldo.setVisible(false);
-        txtCI.setText(trabajador.getCi()+"");
+        txtCI.setText(trabajador.getCi() + "");
         txtCI.setEditable(false);
         txtNombre.setText(trabajador.getNombre());
-        String [] fecha=trabajador.getFecha().split("/");
+        String[] fecha = trabajador.getFecha().split("/");
         txtAño.setText(fecha[0]);
         txtMes.setText(fecha[1]);
         txtDia.setText(fecha[2]);
@@ -336,11 +337,12 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        controladorTrabajador=new ControladorTrabajador();
-        if(btnRegistrar.getText().equals("Registrar"))
-            controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), Integer.parseInt(txtSueldoComision.getText()));
-        else
-            controladorTrabajador.modificar(Integer.parseInt(txtCI.getText()),txtNombre.getText(),txtAño.getText()+"/"+txtMes.getText()+"/"+txtDia.getText(),radioSeleccionado, Integer.parseInt(txtSueldo.getText()), Integer.parseInt(txtSueldoComision.getText()));
+        controladorTrabajador = new ControladorTrabajador();
+        if (btnRegistrar.getText().equals("Registrar")) {
+            controladorTrabajador.guardar(Integer.parseInt(txtCI.getText()), txtNombre.getText(), txtAño.getText() + "/" + txtMes.getText() + "/" + txtDia.getText(), radioSeleccionado, Integer.parseInt(txtSueldo.getText()), Integer.parseInt(txtSueldoComision.getText()));
+        } else {
+            controladorTrabajador.modificar(Integer.parseInt(txtCI.getText()), txtNombre.getText(), txtAño.getText() + "/" + txtMes.getText() + "/" + txtDia.getText(), radioSeleccionado, Integer.parseInt(txtSueldo.getText()), Integer.parseInt(txtSueldoComision.getText()));
+        }
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -350,7 +352,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelComision.setVisible(true);
         panelSueldo.setVisible(true);
         txtSueldoComision.setText("");
-        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
+        radioSeleccionado = ((JRadioButton) evt.getSource()).getName();
     }//GEN-LAST:event_ComisionMouseClicked
 
     private void NoComisionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NoComisionMouseClicked
@@ -359,7 +361,7 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelComision.setVisible(true);
         panelSueldo.setVisible(false);
         txtSueldoComision.setText("");
-        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
+        radioSeleccionado = ((JRadioButton) evt.getSource()).getName();
     }//GEN-LAST:event_NoComisionMouseClicked
 
     private void HorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorasMouseClicked
@@ -368,26 +370,24 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
         panelComision.setVisible(true);
         panelSueldo.setVisible(false);
         txtSueldoComision.setText("");
-        radioSeleccionado=((JRadioButton)evt.getSource()).getName();
+        radioSeleccionado = ((JRadioButton) evt.getSource()).getName();
     }//GEN-LAST:event_HorasMouseClicked
 
     private void txtMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtMesActionPerformed
 
     private void txtDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDiaActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_txtDiaActionPerformed
 
     //Inicio
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new RegistrarTrabajador().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Comision;
     private javax.swing.JRadioButton Horas;
@@ -416,7 +416,6 @@ public class RegistrarTrabajador extends javax.swing.JFrame {
     private javax.swing.JTextField txtSueldo;
     private javax.swing.JTextField txtSueldoComision;
     // End of variables declaration//GEN-END:variables
-
     private Trabajador trabajador;
     private String radioSeleccionado;
     private ControladorTrabajador controladorTrabajador;
