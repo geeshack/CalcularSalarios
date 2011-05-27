@@ -23,6 +23,7 @@ public class CambiarFecha extends javax.swing.JDialog {
     public CambiarFecha(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        labelFechaActual.setText(Fecha.getFechaActual());
     }
 
 
@@ -49,10 +50,14 @@ public class CambiarFecha extends javax.swing.JDialog {
         btnCambia = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         labelFechaActual = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        btnCancela = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Cambiar Fecha");
 
+        txtAno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtAno.setName("txtAno"); // NOI18N
         txtAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,8 +65,10 @@ public class CambiarFecha extends javax.swing.JDialog {
             }
         });
 
+        txtMes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtMes.setName("txtMes"); // NOI18N
 
+        txtDia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtDia.setName("txtDia"); // NOI18N
 
         jLabel1.setText("Nueva fecha:");
@@ -89,15 +96,26 @@ public class CambiarFecha extends javax.swing.JDialog {
 
         labelFechaActual.setName("labelFechaActual"); // NOI18N
 
+        jLabel6.setText("/");
+        jLabel6.setName("jLabel6"); // NOI18N
+
+        jLabel7.setText("/");
+        jLabel7.setName("jLabel7"); // NOI18N
+
+        btnCancela.setText("Cancelar");
+        btnCancela.setName("btnCancela"); // NOI18N
+        btnCancela.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(btnCambia))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,16 +127,26 @@ public class CambiarFecha extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6))
                                     .addComponent(jLabel3))
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(labelFechaActual))))
-                .addContainerGap(66, Short.MAX_VALUE))
+                            .addComponent(labelFechaActual)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(92, 92, 92)
+                        .addComponent(btnCambia)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancela)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,16 +158,20 @@ public class CambiarFecha extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel7)
                     .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel6)
+                    .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(btnCambia)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancela)
+                    .addComponent(btnCambia))
                 .addContainerGap())
         );
 
@@ -154,7 +186,13 @@ public class CambiarFecha extends javax.swing.JDialog {
         // TODO add your handling code here:
         Fecha fecha=new Fecha(Integer.parseInt(txtDia.getText()),Integer.parseInt(txtMes.getText()),Integer.parseInt(txtAno.getText()));
         fecha.GuardaFecha();
+        labelFechaActual.setText(Fecha.getFechaActual());
     }//GEN-LAST:event_btnCambiaActionPerformed
+
+    private void btnCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelaActionPerformed
 
     /**
     * @param args the command line arguments
@@ -175,11 +213,14 @@ public class CambiarFecha extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCambia;
+    private javax.swing.JButton btnCancela;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel labelFechaActual;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtDia;

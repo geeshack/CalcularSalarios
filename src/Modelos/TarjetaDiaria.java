@@ -24,7 +24,7 @@ public class TarjetaDiaria {
     }
 
     public void registrarTarjeta(){
-        String query="INSERT INTO TarjetaDiaria (ci,fecha,horas) VALUES ("+ci+","+fecha+","+horas+")";
+        String query="INSERT INTO TarjetaDiaria (ci,fecha,horas) VALUES ("+ci+",'"+fecha+"',"+horas+")";
         try{
             SqlConnection.conectar();
             SqlConnection.ejecutar(query);

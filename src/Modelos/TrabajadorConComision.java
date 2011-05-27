@@ -1,5 +1,8 @@
 package Modelos;
 
+import Controladores.SqlConnection;
+import java.sql.ResultSet;
+
 public class TrabajadorConComision extends Trabajador {
 
     protected int sueldo;
@@ -39,6 +42,18 @@ public class TrabajadorConComision extends Trabajador {
 
     @Override
     public int calcularPago(){
+        String query="SELECT sueldo,comision FROM TrabajadorConComision Where ci="+ci;
+        int sueldo=0,comision=0;
+        try{
+        SqlConnection.conectar();
+        ResultSet rs=SqlConnection.ejecutarResultado(query);
+        if(rs.next()){
+            sueldo=rs.getInt("sueldo");
+            comision=rs.getInt("comision");
+        }
+
+        }
+        catch(Exception e){}
         return 0;
     }
 }
