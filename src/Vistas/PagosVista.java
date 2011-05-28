@@ -11,6 +11,10 @@ public class PagosVista extends javax.swing.JDialog {
         initComponents();
         controlador.setVista(this);
     }
+    public PagosVista() {
+        initComponents();
+        controlador.setVista(this);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -25,7 +29,7 @@ public class PagosVista extends javax.swing.JDialog {
         btnDetalle = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Calcular Pagos");
 
         jPanel1.setName("jPanel1"); // NOI18N

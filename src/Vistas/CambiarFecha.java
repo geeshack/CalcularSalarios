@@ -54,10 +54,10 @@ public class CambiarFecha extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         btnCancela = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cambiar Fecha");
 
-        txtAno.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAno.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtAno.setName("txtAno"); // NOI18N
         txtAno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,10 +65,10 @@ public class CambiarFecha extends javax.swing.JDialog {
             }
         });
 
-        txtMes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtMes.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtMes.setName("txtMes"); // NOI18N
 
-        txtDia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtDia.setFont(new java.awt.Font("Tahoma", 0, 14));
         txtDia.setName("txtDia"); // NOI18N
 
         jLabel1.setText("Nueva fecha:");

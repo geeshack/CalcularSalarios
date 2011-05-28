@@ -4,12 +4,12 @@ import Interfaces.IReceptorTrabajador;
 import Modelos.*;
 import Vistas.*;
 
-public class ControladorSindicato implements IReceptorTrabajador {
+public class ControladorCompraSindicato implements IReceptorTrabajador {
 
     BuscarTrabajador buscarTrabajador;
-    RegistraSindicato vista;
+    RegistroCompraSindicato vista;
 
-    public void setVista(RegistraSindicato vista) {
+    public void setVista(RegistroCompraSindicato vista) {
         this.vista = vista;
     }
 
@@ -19,12 +19,12 @@ public class ControladorSindicato implements IReceptorTrabajador {
         buscarTrabajador.setVisible(true);
     }
 
-    public void Guardar(int ci, int aporte) {
-        AporteSindicato aporteSindicato = new AporteSindicato(ci, aporte);
-        aporteSindicato.registrarAporte();
+    public void GuardarCompra(int ci, int costo,String descripcion) {
+        AporteSindicato.registraCompra(ci,costo,descripcion);
     }
 
     public void RecibirTrabajador(Trabajador trabajador) {
         vista.setTrabajadorCI(trabajador.getCi());
     }
+
 }

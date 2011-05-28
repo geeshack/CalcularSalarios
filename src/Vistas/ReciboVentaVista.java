@@ -32,7 +32,7 @@ public class ReciboVentaVista extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Recibos de Ventas");
 
         btnGuardar.setText("Guardar");

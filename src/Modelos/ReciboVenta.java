@@ -18,7 +18,7 @@ public class ReciboVenta {
 
     public void guardar() {
 
-        String query = "INSERT INTO ReciboVenta (ci,monto,fecha) VALUES (" + ci + "," + monto + ",'" + fecha + "')";
+        String query = "INSERT INTO ReciboVenta (ci,monto,fecha,pagado) VALUES (" + ci + "," + monto + ",'" + fecha + "','pendiente')";
 
         try {
             SqlConnection.conectar();
