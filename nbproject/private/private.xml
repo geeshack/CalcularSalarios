@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Controladores/ControladorTrabajador.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/Trabajador.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/TrabajadorPorHoras.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/TrabajadorConComision.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/TrabajadorSinComision.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Controladores/ControladorReciboVenta.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Controladores/ControladorPagos.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Controladores/ControladorSindicato.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/AporteSindicato.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/Fecha.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Modelos/ReciboVenta.java</file>
+        <file>file:/C:/Proyectos/CalcularSalarios/src/Controladores/ControladorTarjetaDiaria.java</file>
+    </open-files>
 </project-private>

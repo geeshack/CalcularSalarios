@@ -12,11 +12,9 @@ public class TrabajadorPorHoras extends Trabajador {
     }
 
     public TrabajadorPorHoras(int ci, String tipo) {
-        this.ci=ci;
-        this.tipo=tipo;
+        this.ci = ci;
+        this.tipo = tipo;
     }
-
-
 
     @Override
     protected void registrar() {
@@ -36,7 +34,8 @@ public class TrabajadorPorHoras extends Trabajador {
     }
 
     @Override
-    public int calcularPago(){
-        return 0;
+    public int calcularPago() {
+        int horasTrabajadas = TarjetaDiaria.getHoras(ci);
+        return (sueldo * horasTrabajadas);
     }
 }

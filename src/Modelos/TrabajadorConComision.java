@@ -18,8 +18,6 @@ public class TrabajadorConComision extends Trabajador {
         this.tipo=tipo;
     }
 
-
-
     @Override
     protected void registrar() {
         String query = "Insert into TrabajadorConComision (ci, nombreCompleto, fechaNacimiento, sueldo, comision) "
